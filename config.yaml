@@ -1,0 +1,18 @@
+# Configurações do WBS Hub
+# ========================================
+
+# Endpoint do Make para criar tarefas
+# Substitua pela sua URL real
+make_endpoint: "https://hook.us1.make.com/SEU_ENDPOINT_AQUI"
+
+# Configurações de projeto
+projeto_default: ""
+
+# Timeout para requisições (segundos)
+request_timeout: 30
+
+# Configurações de UI
+ui:
+  page_title: "WBS Hub - ARV"
+  page_icon: "📋"
+  layout: "wide"

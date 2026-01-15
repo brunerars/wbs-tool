@@ -1,0 +1,83 @@
+# Template: WBS Projeto Elétrico
+# ========================================
+
+nome: "WBS Projeto Elétrico"
+wbs_type: "eletrico"
+descricao: "Work Breakdown Structure para fase de projeto elétrico"
+
+# Tarefas padrão deste WBS
+tarefas:
+  - id: 1
+    nome: "Desenvolver arquitetura elétrica"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 2
+    nome: "Desenvolver descrição de funcionamento e fluxograma"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 3
+    nome: "Definir lista de sensores"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 4
+    nome: "Definir acionamentos elétricos"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 5
+    nome: "Definir elementos de segurança"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 6
+    nome: "Definir bornes e cablagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 7
+    nome: "Definir PLC, IHM e redes"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 8
+    nome: "Definir robôs e interfaces"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 9
+    nome: "Criar lista de I/O"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 10
+    nome: "Gerar esquemáticos elétricos"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 11
+    nome: "Aplicar checklist de segurança elétrica NR10 e NR12"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 12
+    nome: "Revisão interna – Elétrica"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 13
+    nome: "Aprovação do cliente"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 14
+    nome: "Impressão / plotagem de diagramas"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 15
+    nome: "Passagem para Manufatura"
+    obrigatoria: false
+    dias_default: 1

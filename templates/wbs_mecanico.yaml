@@ -1,0 +1,53 @@
+# Template: WBS Projeto Mecânico
+# ========================================
+# Este é um exemplo - ajuste as tarefas conforme sua necessidade
+
+nome: "WBS Projeto Mecânico"
+wbs_type: "mecanico"
+descricao: "Work Breakdown Structure para fase de projeto mecânico"
+
+tarefas:
+  - id: 1
+    nome: "Desenvolver conceito mecânico"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 2
+    nome: "Modelagem 3D estrutural"
+    obrigatoria: false
+    dias_default: 3
+
+  - id: 3
+    nome: "Dimensionamento de componentes"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 4
+    nome: "Análise de interferências"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 5
+    nome: "Detalhamento de peças"
+    obrigatoria: false
+    dias_default: 3
+
+  - id: 6
+    nome: "Lista de materiais (BOM)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 7
+    nome: "Revisão interna – Mecânica"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 8
+    nome: "Aprovação do cliente"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 9
+    nome: "Liberação para fabricação"
+    obrigatoria: false
+    dias_default: 1
