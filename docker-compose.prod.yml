@@ -4,7 +4,7 @@ services:
   wbs-hub:
     image: wbs-hub:latest
     networks:
-      - traefik-public
+      - network_public
     volumes:
       - wbs-data:/app/data
     deploy:
