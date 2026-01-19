@@ -8,19 +8,20 @@ services:
     volumes:
       - wbs-data:/app/data
     deploy:
+      mode: replicated
       replicas: 1
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.wbs-hub.rule=Host(`wbs.arvsystems.cloud`)"
-        - "traefik.http.routers.wbs-hub.entrypoints=websecure"
-        - "traefik.http.routers.wbs-hub.tls.certresolver=letsencryptresolver"
-        - "traefik.http.services.wbs-hub.loadbalancer.server.port=8501"
       restart_policy:
         condition: on-failure
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.wbs-hub.rule=Host(`wbs.arvsystems.cloud`)
+        - traefik.http.routers.wbs-hub.entrypoints=websecure
+        - traefik.http.routers.wbs-hub.tls.certresolver=letsencryptresolver
+        - traefik.http.services.wbs-hub.loadbalancer.server.port=8501
+        - traefik.http.routers.wbs-hub.service=wbs-hub
 
 networks:
   network_public:
-    name: network_public
     external: true
 
 volumes:
