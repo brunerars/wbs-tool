@@ -13,6 +13,7 @@ import requests
 from pathlib import Path
 from typing import Dict, List, Any
 import time
+import json
 
 from utils import (
     gerar_tarefas_expandidas, 
@@ -47,6 +48,11 @@ def carregar_templates() -> Dict[str, Dict[str, Any]]:
     
     return templates
 
+def carregar_projetos(caminho: str) -> list:
+    """Carrega a lista de projetos a partir de um arquivo JSON."""
+    with open(caminho, 'r', encoding='utf-8') as f:
+        dados = json.load(f)
+    return dados["projetos"]
 
 def enviar_para_make(
     endpoint: str, 
@@ -115,15 +121,17 @@ def render_ui_percentual(template: Dict, wbs_type: str) -> List[Dict[str, Any]]:
     
     # Botões de ação rápida
     col_sel1, col_sel2, col_sel3 = st.columns([1, 1, 4])
+    tarefas = template["tarefas"]
     with col_sel1:
         if st.button("Selecionar todas"):
-            st.session_state["selecionar_todas"] = True
+            for tarefa in tarefas:
+                st.session_state[f"check_{wbs_type}_{tarefa['id']}"] = True
+            st.rerun()
     with col_sel2:
         if st.button("Limpar seleção"):
-            st.session_state["selecionar_todas"] = False
-    
-    # Estado de seleção
-    selecionar_todas = st.session_state.get("selecionar_todas", False)
+            for tarefa in tarefas:
+                st.session_state[f"check_{wbs_type}_{tarefa['id']}"] = False
+            st.rerun()
     
     # Grid de tarefas em 2 colunas
     tarefas_selecionadas = []
@@ -140,8 +148,7 @@ def render_ui_percentual(template: Dict, wbs_type: str) -> List[Dict[str, Any]]:
             
             with c_check:
                 selecionada = st.checkbox(
-                    f"**{tarefa['id']}.** {tarefa['nome']}", 
-                    value=selecionar_todas,
+                    f"**{tarefa['id']}.** {tarefa['nome']}",
                     key=f"check_{wbs_type}_{tarefa['id']}"
                 )
             
@@ -196,34 +203,32 @@ def render_ui_multiplicador(template: Dict, wbs_type: str) -> tuple[Dict, List[s
     
     st.divider()
     
-    # Checkboxes de itens
-    st.markdown("**Selecione os itens:**")
-    
+    # Grid de itens (2 colunas para melhor aproveitamento)
+    itens_selecionados = []
+    itens_categoria = categoria.get("itens", [])
+
     # Botões de ação rápida
     col_sel1, col_sel2, col_sel3 = st.columns([1, 1, 4])
     with col_sel1:
         if st.button("Selecionar todos", key=f"sel_all_{categoria['id']}"):
-            st.session_state[f"selecionar_todas_{categoria['id']}"] = True
+            for i in range(len(itens_categoria)):
+                st.session_state[f"item_{wbs_type}_{categoria['id']}_{i}"] = True
+            st.rerun()
     with col_sel2:
         if st.button("Limpar", key=f"clear_{categoria['id']}"):
-            st.session_state[f"selecionar_todas_{categoria['id']}"] = False
-    
-    selecionar_todas = st.session_state.get(f"selecionar_todas_{categoria['id']}", False)
-    
-    # Grid de itens (2 colunas para melhor aproveitamento)
-    itens_selecionados = []
-    itens_categoria = categoria.get("itens", [])
-    
+            for i in range(len(itens_categoria)):
+                st.session_state[f"item_{wbs_type}_{categoria['id']}_{i}"] = False
+            st.rerun()
+
     # Divide em 2 colunas
     col1, col2 = st.columns(2)
     metade = (len(itens_categoria) + 1) // 2
-    
+
     for i, item in enumerate(itens_categoria):
         col = col1 if i < metade else col2
         with col:
             selecionado = st.checkbox(
                 item,
-                value=selecionar_todas,
                 key=f"item_{wbs_type}_{categoria['id']}_{i}"
             )
             if selecionado:
@@ -260,27 +265,8 @@ def main():
     
     # Sidebar - Configurações
     with st.sidebar:
-        st.header("⚙️ Configurações")
-        
-        make_endpoint = st.text_input(
-            "Endpoint Make",
-            value=config["make_endpoint"],
-            type="password",
-            help="URL do webhook Make para criar tarefas"
-        )
-        
-        delay = st.slider(
-            "Delay entre requisições (s)",
-            min_value=0.5,
-            max_value=3.0,
-            value=1.0,
-            step=0.5,
-            help="Tempo de espera entre cada tarefa enviada"
-        )
-        
-        st.divider()
-        st.caption("Templates disponíveis:")
-        for wbs_type, template in templates.items():
+        st.caption("TEMPLATES DISPONÍVEIS:")
+        for wbs_type, template in sorted(templates.items(), key=lambda x: x[1]["nome"]):
             tipo = template.get("tipo_logica", "percentual")
             icone = "🔢" if tipo == "percentual" else "📦"
             st.caption(f"{icone} {template['nome']}")
@@ -294,9 +280,10 @@ def main():
     with col1:
         # Seleção do template
         template_opcoes = {t["nome"]: k for k, t in templates.items()}
+        opcoes_ordenadas = sorted(template_opcoes.keys())
         template_selecionado = st.selectbox(
             "Tipo de WBS",
-            options=list(template_opcoes.keys()),
+            options=opcoes_ordenadas,
             help="Selecione o template de WBS a ser usado"
         )
         
@@ -310,12 +297,29 @@ def main():
             placeholder="Ex: 010",
             help="Identificador único deste WBS"
         )
-        
-        projeto = st.text_input(
-            "Projeto",
-            placeholder="Ex: 01058 - Montagem de segmento...",
-            help="Nome do projeto vinculado"
-        )
+
+        # Carrega projetos do JSON e exibe em selectbox
+        projetos = carregar_projetos("data/projetos.json")
+
+        if projetos:
+            projeto_opcoes = {
+                f'{p.get("codigo", "?")} - {p.get("nome", "Sem nome")} ({p.get("cliente", "?")})': p
+                for p in projetos
+            }
+
+            projeto_label = st.selectbox(
+                "Projeto",
+                options=list(projeto_opcoes.keys()),
+                help="Selecione o projeto vinculado"
+            )
+
+            projeto_selecionado = projeto_opcoes[projeto_label]
+            projeto = projeto_label  # Nome para exibição
+            projeto_id = projeto_selecionado.get("id")  # ID para enviar ao Make
+        else:
+            st.warning("Nenhum projeto encontrado no arquivo data/projetos.json")
+            projeto = None
+            projeto_id = None
     
     with col2:
         st.markdown(f"**{template['nome']}**")
@@ -351,7 +355,8 @@ def main():
                     wbs_type=wbs_type,
                     categoria_nome=categoria["nome"],
                     itens=itens,
-                    tarefas_fixas=categoria["tarefas"]
+                    tarefas_fixas=categoria["tarefas"],
+                    projeto_id=projeto_id
                 )
             else:
                 st.warning(msg_erro)
@@ -378,7 +383,8 @@ def main():
                     nome_wbs=nome_wbs,
                     projeto=projeto,
                     wbs_type=wbs_type,
-                    tarefas_selecionadas=tarefas_selecionadas
+                    tarefas_selecionadas=tarefas_selecionadas,
+                    projeto_id=projeto_id
                 )
             else:
                 st.warning(msg_erro)
@@ -411,7 +417,7 @@ def main():
         # Botão de envio
         col_btn, col_status = st.columns([1, 3])
         
-        endpoint_configurado = make_endpoint != "https://hook.us1.make.com/SEU_ENDPOINT_AQUI"
+        endpoint_configurado = config["make_endpoint"] != "https://hook.us1.make.com/SEU_ENDPOINT_AQUI"
         
         with col_btn:
             enviar = st.button(
@@ -431,10 +437,10 @@ def main():
             status_text.text(f"Enviando {len(tarefas_expandidas)} tarefas...")
             
             sucesso, mensagem, resultados = enviar_para_make(
-                endpoint=make_endpoint,
+                endpoint=config["make_endpoint"],
                 tarefas=tarefas_expandidas,
                 timeout=config["request_timeout"],
-                delay=delay,
+                delay=config["request_delay"],
                 progress_callback=lambda p: progress_bar.progress(p)
             )
             

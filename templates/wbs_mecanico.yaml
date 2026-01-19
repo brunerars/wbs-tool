@@ -2,7 +2,7 @@
 # ========================================
 # Este é um exemplo - ajuste as tarefas conforme sua necessidade
 
-nome: "WBS Projeto Mecânico"
+nome: "02 - WBS Projeto Mecânico"
 wbs_type: "mecanico"
 descricao: "Work Breakdown Structure para fase de projeto mecânico"
 

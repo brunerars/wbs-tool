@@ -1,0 +1,200 @@
+# Template: WBS Montagem Elétrica
+# ===============================
+# Estrutura baseada no fluxo real de montagem elétrica industrial
+
+nome: "08 - WBS Montagem Elétrica"
+wbs_type: "montagem_eletrica"
+descricao: "Work Breakdown Structure para fase de montagem eletrica"
+
+tarefas:
+  # -------------------------------
+  # PREPARAÇÃO E ANÁLISE
+  # -------------------------------
+  - id: 1
+    nome: "Separar e posicionar o Painel de Controle, Painel de IHM e Caixas de Passagem no subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 2
+    nome: "Avaliar a documentação elétrica (esquemas, lista de cabos, layouts) do subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 3
+    nome: "Verificar o espaço físico e os caminhos de cabos entre painéis e elementos montados"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # INFRAESTRUTURA DE CABOS
+  # -------------------------------
+  - id: 4
+    nome: "Instalar calhas metálicas, leitos e eletrocalhas para passagem de cabos"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 5
+    nome: "Instalar dutos flexíveis e conduítes plásticos ou metálicos nos trechos locais"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 6
+    nome: "Fixar organizadores, presilhas e abraçadeiras para contenção de cabos"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # FIXAÇÃO DE DISPOSITIVOS DE CAMPO
+  # -------------------------------
+  - id: 7
+    nome: "Fixar sensores"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 8
+    nome: "Fixar botoeiras"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # CABEAMENTO – PAINEL DE CONTROLE
+  # -------------------------------
+  - id: 9
+    nome: "Passar e fixar cabos entre o Painel de Controle e os motores, servomotores e motoredutores"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 10
+    nome: "Passar e fixar cabos entre o Painel de Controle e os sensores, encoders, réguas, células de carga e sistemas de visão"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 11
+    nome: "Conectar sinais digitais e analógicos do Painel de Controle aos dispositivos"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 12
+    nome: "Conectar a interface elétrica do bloco de válvulas ao Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 13
+    nome: "Conectar o Painel de IHM ao Painel de Controle (cabos de interface e alimentação)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 14
+    nome: "Testar botões, chaves e sinalizações locais do Painel de IHM, verificando correspondência com entradas e saídas do CLP"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # CAIXAS DE PASSAGEM
+  # -------------------------------
+  - id: 15
+    nome: "Passar e fixar cabos entre as Caixas de Passagem e os sensores ou atuadores em campo"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 16
+    nome: "Conectar os bornes das Caixas de Passagem aos dispositivos periféricos (motores, sensores, válvulas)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 17
+    nome: "Interligar as Caixas de Passagem ao Painel de Controle"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # REDES INDUSTRIAIS E COMUNICAÇÃO
+  # -------------------------------
+  - id: 18
+    nome: "Passar e organizar cabos de rede entre o Painel de Controle e os dispositivos com comunicação (CLP, IHMs, inversores, IO-Link, etc.)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 19
+    nome: "Conectar switches, módulos de rede e dispositivos inteligentes"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 20
+    nome: "Validar a comunicação entre CLP, IHMs e dispositivos via rede"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # SEGURANÇA
+  # -------------------------------
+  - id: 21
+    nome: "Conectar cortinas de luz, scanners, chaves de segurança e botoeiras de emergência ao relé ou Safety PLC"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 22
+    nome: "Conectar comandos locais (botões, seletores, torres de sinal) ao CLP"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 23
+    nome: "Validar o funcionamento da parada segura e da sequência de segurança (EMG, reset, enabling)"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # TESTES FUNCIONAIS DE CAMPO
+  # -------------------------------
+  - id: 24
+    nome: "Testar acionamentos locais (cilindros, motores, ferramentas) via CLP"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 25
+    nome: "Conectar e testar parafusadeiras elétricas, ferramentas e cabeçotes ao Painel de Controle ou à IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 26
+    nome: "Conectar e testar robôs industriais ou colaborativos à rede e alimentação"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 27
+    nome: "Conectar e testar sistemas de visão, sensores inteligentes e câmeras ao Painel e ao CLP"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 28
+    nome: "Conectar e testar alimentadores vibratórios, calhas e atuadores especiais à alimentação e sinais"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 29
+    nome: "Conectar e testar esteiras, mesas de roletes e elevadores motorizados"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # VALIDAÇÃO E LIBERAÇÃO
+  # -------------------------------
+  - id: 30
+    nome: "Verificar a continuidade elétrica dos circuitos de campo"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 31
+    nome: "Conferir a identificação, etiquetas e organização dos cabos"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 32
+    nome: "Preencher o checklist de liberação elétrica do subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 33
+    nome: "Liberar o subconjunto para programação e testes integrados"
+    obrigatoria: true
+    dias_default: 1

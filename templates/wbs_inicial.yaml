@@ -1,0 +1,75 @@
+# Template: WBS Fase Inicial do Projeto
+# ====================================
+# Estrutura baseada no processo de início de projetos ETO
+
+nome: "01 - WBS Fase Inicial"
+wbs_type: "fase_inicial"
+descricao: "Work Breakdown Structure para fase inicial e estruturacao do projeto"
+
+tarefas:
+  # -------------------------------
+  # RECEBIMENTO E TRANSIÇÃO
+  # -------------------------------
+  - id: 1
+    nome: "Receber pedido de compra do cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 2
+    nome: "Realizar reunião de transição entre Vendas e Engenharia"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # ANÁLISE DE ESCOPO
+  # -------------------------------
+  - id: 3
+    nome: "Analisar escopo técnico e comercial do projeto"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 4
+    nome: "Solicitar informações adicionais ao cliente"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 5
+    nome: "Receber e organizar informações técnicas e comerciais do cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 6
+    nome: "Visitar instalações do cliente para validação técnica"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # ESTRUTURAÇÃO DO PROJETO
+  # -------------------------------
+  - id: 7
+    nome: "Criar documentação inicial do projeto"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 8
+    nome: "Definir subprojetos e subconjuntos mecânicos, elétricos e pneumáticos"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 9
+    nome: "Identificar riscos e restrições do projeto"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # GOVERNANÇA E PLANEJAMENTO
+  # -------------------------------
+  - id: 10
+    nome: "Realizar reunião de kickoff interno"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 11
+    nome: "Gerar cronograma macro inicial"
+    obrigatoria: true
+    dias_default: 1

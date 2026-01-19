@@ -3,13 +3,15 @@
 
 # Endpoint do Make para criar tarefas
 # Substitua pela sua URL real
-make_endpoint: "https://hook.us1.make.com/SEU_ENDPOINT_AQUI"
+make_endpoint: "https://hook.us1.make.com/owjl4ws1v6aw2jhw84c2k2hytr9qiwkg"
 
 # Configurações de projeto
 projeto_default: ""
 
 # Timeout para requisições (segundos)
 request_timeout: 30
+
+request_delay: 0.5
 
 # Configurações de UI
 ui:

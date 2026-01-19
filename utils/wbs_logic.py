@@ -45,40 +45,43 @@ def gerar_tarefas_expandidas(
     nome_wbs: str,
     projeto: str,
     wbs_type: str,
-    tarefas_selecionadas: List[Dict[str, Any]]
+    tarefas_selecionadas: List[Dict[str, Any]],
+    projeto_id: int = None
 ) -> List[Dict[str, Any]]:
     """
     Gera a lista expandida de tarefas com percentuais.
-    
+
     Args:
         nome_wbs: Nome/identificador do WBS (ex: "010")
         projeto: Nome do projeto vinculado
         wbs_type: Tipo do WBS (ex: "eletrico", "mecanico")
         tarefas_selecionadas: Lista de tarefas com seus dias
             [{"id": 1, "nome": "Tarefa X", "dias": 2}, ...]
-    
+        projeto_id: ID do projeto no Monday para vincular a tarefa
+
     Returns:
         Lista de tarefas expandidas prontas para enviar ao Make
-        [{"tarefa": "010 - 1. Tarefa X - 50%", "projeto": "...", "wbs_type": "..."}, ...]
+        [{"tarefa": "010 - 1. Tarefa X - 50%", "projeto": "...", "wbs_type": "...", "projeto_id": ...}, ...]
     """
     tarefas_expandidas = []
-    
+
     for tarefa in tarefas_selecionadas:
         nome_tarefa = tarefa["nome"]
         ordem = tarefa["id"]
         dias = tarefa["dias"]
-        
+
         percentuais = calcular_percentuais(dias)
-        
+
         for percentual in percentuais:
             tarefa_formatada = f"{nome_wbs} - {ordem}. {nome_tarefa} - {percentual}%"
-            
+
             tarefas_expandidas.append({
                 "tarefa": tarefa_formatada,
                 "projeto": projeto,
-                "wbs_type": wbs_type
+                "wbs_type": wbs_type,
+                "projeto_id": projeto_id
             })
-    
+
     return tarefas_expandidas
 
 
@@ -119,13 +122,14 @@ def gerar_tarefas_multiplicador(
     wbs_type: str,
     categoria_nome: str,
     itens: List[str],
-    tarefas_fixas: List[str]
+    tarefas_fixas: List[str],
+    projeto_id: int = None
 ) -> List[Dict[str, Any]]:
     """
     Gera tarefas no formato multiplicador (itens × tarefas fixas).
-    
+
     Para cada item digitado, cria todas as tarefas fixas da categoria.
-    
+
     Args:
         nome_wbs: Nome/identificador do WBS (ex: "010")
         projeto: Nome do projeto vinculado
@@ -133,32 +137,34 @@ def gerar_tarefas_multiplicador(
         categoria_nome: Nome da categoria (ex: "Hardware Mecânico")
         itens: Lista de itens digitados pelo usuário
         tarefas_fixas: Lista de tarefas fixas da categoria
-    
+        projeto_id: ID do projeto no Monday para vincular a tarefa
+
     Returns:
         Lista de tarefas expandidas prontas para enviar ao Make
-        
+
     Exemplo de output:
         "010 - <Motor spindle> - Definir lista de itens"
         "010 - <Motor spindle> - Verificar itens de estoque"
         ...
     """
     tarefas_expandidas = []
-    
+
     for item in itens:
         item = item.strip()
         if not item:
             continue
-            
+
         for tarefa in tarefas_fixas:
-            tarefa_formatada = f"{nome_wbs} - <{item}> - {tarefa}"
-            
+            tarefa_formatada = f"{nome_wbs} - {item} - {tarefa}"
+
             tarefas_expandidas.append({
                 "tarefa": tarefa_formatada,
                 "projeto": projeto,
                 "wbs_type": wbs_type,
-                "categoria": categoria_nome
+                "categoria": categoria_nome,
+                "projeto_id": projeto_id
             })
-    
+
     return tarefas_expandidas
 
 

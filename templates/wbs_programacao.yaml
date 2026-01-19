@@ -1,0 +1,196 @@
+# Template: WBS Programação e Comissionamento
+# ===========================================
+# Estrutura baseada no fluxo real de programação industrial
+
+nome: "09 - WBS Programação"
+wbs_type: "programacao"
+descricao: "Work Breakdown Structure para fase de programacao e comissionamento do subconjunto"
+
+tarefas:
+  # -------------------------------
+  # ANÁLISE E CONCEPÇÃO LÓGICA
+  # -------------------------------
+  - id: 1
+    nome: "Analisar a documentação técnica do subconjunto (lista de I/Os, fluxos, layouts de IHM, matriz de segurança)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 2
+    nome: "Desenvolver o esboço lógico do funcionamento (fluxograma)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 3
+    nome: "Programar o CLP offline (estrutura de blocos, permissivos, intertravamentos e segurança)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 4
+    nome: "Programar o Safety PLC offline (lógica de segurança, intertravamentos e permissivos)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 5
+    nome: "Programar o sistema de visão offline (blocos de inspeção, triggers, comunicação e permissivos)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 6
+    nome: "Criar telas da IHM (comandos manuais, alarmes, ciclos, ajustes e manutenção)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 7
+    nome: "Programar robôs e dispositivos especiais em ambiente offline (trajetos, simulações, testes e pré-lógicas)"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 8
+    nome: "Validar a lógica teórica de funcionamento do subconjunto junto à engenharia"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # ENERGIZAÇÃO E DOWNLOAD
+  # -------------------------------
+  - id: 9
+    nome: "Verificar a energização dos painéis, dispositivos e fontes de alimentação"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 10
+    nome: "Realizar o download da programação no CLP"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 11
+    nome: "Realizar o download da programação no Safety PLC"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 12
+    nome: "Realizar o download da programação na IHM"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 13
+    nome: "Realizar o download da programação no robô"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 14
+    nome: "Realizar o download da programação no sistema de visão (câmera)"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # COMUNICAÇÃO E I/Os
+  # -------------------------------
+  - id: 15
+    nome: "Validar a comunicação de rede entre CLP, IHM, servos, inversores, sensores inteligentes e sistemas de visão"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 16
+    nome: "Testar entradas e saídas digitais e analógicas de todos os dispositivos conectados"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 17
+    nome: "Testar acionamentos de cilindros e válvulas (testes locais e via CLP)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 18
+    nome: "Testar motores e servomotores (movimentos, rampas e posições de referência)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 19
+    nome: "Testar sensores e leitura de sinais (digitais, analógicos, encoders, réguas lineares e sistemas de visão)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 20
+    nome: "Validar o funcionamento de botões, seletores e torres de sinalização na IHM e no CLP"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 21
+    nome: "Validar o circuito de segurança: EMG, cortinas, scanners, reset e enabling"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # CICLOS DE OPERAÇÃO
+  # -------------------------------
+  - id: 22
+    nome: "Implementar a lógica do ciclo manual (etapas do processo, sequenciamento e temporizações)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 23
+    nome: "Testar o ciclo manual completo do subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 24
+    nome: "Implementar a lógica do ciclo automático (etapas do processo, sequenciamento e temporizações)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 25
+    nome: "Testar o ciclo automático completo do subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # AJUSTES, FALHAS E INTEGRAÇÃO
+  # -------------------------------
+  - id: 26
+    nome: "Ajustar tempos, permissivos e intertravamentos durante a operação real"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 27
+    nome: "Validar condições de falha, alarmes e reset do sistema"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 28
+    nome: "Implementar tratativas de falha e restabelecimento após parada de máquina"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 29
+    nome: "Integrar robôs industriais ou colaborativos (testar segurança, referências e zonas de trabalho)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 30
+    nome: "Testar sistemas de visão (iluminação, foco, aprendizado e comunicação com o CLP)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 31
+    nome: "Validar ferramentas e dispositivos elétricos (parafusadeiras, cabeçotes e servoatuadores)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 32
+    nome: "Verificar o funcionamento completo e o sincronismo com outros subconjuntos"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # LIBERAÇÃO
+  # -------------------------------
+  - id: 33
+    nome: "Preencher o checklist final de programação (lógica, segurança, telas e testes)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 34
+    nome: "Liberar o subconjunto para FAT (Factory Acceptance Test) ou operação assistida"
+    obrigatoria: true
+    dias_default: 1

@@ -1,0 +1,185 @@
+# Template: WBS Manufatura – Painéis Elétricos
+# ==========================================
+# WBS baseada no checklist original de manufatura
+
+nome: "06 - WBS Manufatura Elétrica"
+wbs_type: "manufatura_eletrico"
+descricao: "Work Breakdown Structure para fase de manufatura elétrica"
+
+tarefas:
+  # -------------------------------
+  # PAINEL DE CONTROLE – PLACA
+  # -------------------------------
+  - id: 1
+    nome: "Marcar layout na Placa do Painel de Controle (furos, trilhos, etiquetas)"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 2
+    nome: "Realizar furação e fixação de trilhos e canaletas na Placa do Painel de Controle"
+    obrigatoria: false
+    dias_default: 3
+
+  - id: 3
+    nome: "Fixar dispositivos (CLP, relés, fonte, disjuntores, drives) na Placa do Painel de Controle"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 4
+    nome: "Realizar fiação interna entre dispositivos na Placa do Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 5
+    nome: "Identificar e etiquetar fios e dispositivos na Placa do Painel de Controle"
+    obrigatoria: false
+    dias_default: 3
+
+  - id: 6
+    nome: "Instalar a Placa do Painel de Controle dentro do gabinete"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # PAINEL DE CONTROLE – GABINETE
+  # -------------------------------
+  - id: 7
+    nome: "Fixar bornes, conectores e organizadores no Gabinete do Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 8
+    nome: "Instalar acessórios internos no Gabinete do Painel de Controle (exaustor, iluminação, fonte auxiliar)"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 9
+    nome: "Verificar organização interna e integridade dos componentes do Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 10
+    nome: "Realizar teste de continuidade elétrica no Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 11
+    nome: "Realizar teste de isolamento e curto entre terminais no Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 12
+    nome: "Alimentar o Painel de Controle em bancada para teste funcional (ex: relés, fonte, ventilação)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 13
+    nome: "Verificar fixação, organização e etiquetas no Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 14
+    nome: "Preencher checklist técnico final do Painel de Controle"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 15
+    nome: "Liberar o Painel de Controle para montagem elétrica"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # PAINEL DE IHM
+  # -------------------------------
+  - id: 16
+    nome: "Marcar layout no Gabinete do Painel de IHM (furos para botoeiras, etiquetas, sinaleiros)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 17
+    nome: "Fixar botoeiras, chaves, seletores e sinaleiros no Gabinete do Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 18
+    nome: "Fixar conectores e bornes internos no Gabinete do Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 19
+    nome: "Realizar fiação interna entre dispositivos no Gabinete do Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 20
+    nome: "Identificar e etiquetar fios e dispositivos no Gabinete do Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 21
+    nome: "Realizar teste de continuidade e acionamento dos dispositivos do Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 22
+    nome: "Validar identificação, fiação e codificação dos sinais no Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 23
+    nome: "Preencher checklist técnico final do Painel de IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 24
+    nome: "Liberar o Painel de IHM para montagem elétrica"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # CAIXA DE PASSAGEM
+  # -------------------------------
+  - id: 25
+    nome: "Marcar layout e preparar furação na Caixa de Passagem (furos, etiquetas, trilhos)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 26
+    nome: "Fixar bornes, conectores e canaletas na Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 27
+    nome: "Realizar fiação interna entre bornes e conectores na Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 28
+    nome: "Identificar e etiquetar fios e terminais na Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 29
+    nome: "Realizar teste de continuidade entre bornes e conectores da Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 30
+    nome: "Verificar isolamento e ausência de curto na Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 31
+    nome: "Conferir etiquetas, codificação e fixação na Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 32
+    nome: "Preencher checklist técnico final da Caixa de Passagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 33
+    nome: "Liberar a Caixa de Passagem para montagem elétrica"
+    obrigatoria: false
+    dias_default: 1

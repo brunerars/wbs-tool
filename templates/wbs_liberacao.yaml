@@ -1,0 +1,128 @@
+# Template: WBS Liberação para Entrega
+# ===================================
+# Estrutura baseada no processo de liberação final, FAT e embarque
+
+nome: "10 - WBS Liberação para Entrega"
+wbs_type: "liberacao_entrega"
+descricao: "Work Breakdown Structure para fase de liberacao, FAT e envio ao cliente"
+
+tarefas:
+  # -------------------------------
+  # DOCUMENTAÇÃO FINAL
+  # -------------------------------
+  - id: 1
+    nome: "Criar manual de operação da máquina ou célula (instruções passo a passo)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 2
+    nome: "Elaborar manual de troubleshooting (falhas comuns, sintomas, causas e soluções)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 3
+    nome: "Gerar lista de spare parts mecânicos, pneumáticos e elétricos (com códigos e fornecedores)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 4
+    nome: "Criar manual de manutenção preventiva e corretiva (com periodicidade e instruções)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 5
+    nome: "Validar documentação com engenharia antes de entrega final ao cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # TESTES FINAIS INTERNOS
+  # -------------------------------
+  - id: 6
+    nome: "Testar sistemas de segurança (cortina de luz, EMG, bi-manual, chaves e scanners)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 7
+    nome: "Testar funcionamento completo do ciclo automático e manual"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 8
+    nome: "Verificar padrões de acabamento, identificação e organização"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 9
+    nome: "Verificar conformidade com especificações técnicas e qualidade do produto final"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 10
+    nome: "Preencher checklist técnico de testes e apontar pendências"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 11
+    nome: "Realizar ajustes e correções conforme checklist técnico"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # FAT INTERNO
+  # -------------------------------
+  - id: 12
+    nome: "Executar FAT interno final (funcional, segurança, integração e qualidade)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 13
+    nome: "Preencher checklist final de aprovação interna do subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # FAT COM CLIENTE
+  # -------------------------------
+  - id: 14
+    nome: "Apresentar checklist de aprovação interna ao cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 15
+    nome: "Realizar FAT com o cliente (funcional, segurança e especificações)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 16
+    nome: "Preencher checklist do FAT com cliente e registrar observações"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 17
+    nome: "Realizar correções apontadas no FAT com cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 18
+    nome: "Obter aceite final e aprovação para embarque"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # EMBARQUE
+  # -------------------------------
+  - id: 19
+    nome: "Emitir nota fiscal de remessa e gerar documentos de embarque"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 20
+    nome: "Embalar subconjunto com proteção, etiquetas e amarração para transporte"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 21
+    nome: "Carregar para transporte e registrar data de envio"
+    obrigatoria: true
+    dias_default: 1

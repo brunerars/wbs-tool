@@ -2,7 +2,7 @@
 # ========================================
 # Lógica: multiplicador (categoria × itens selecionados × tarefas fixas)
 
-nome: "WBS Aquisição"
+nome: "04 - WBS Aquisição"
 wbs_type: "aquisicao"
 descricao: "Work Breakdown Structure para fase de aquisição de materiais e serviços"
 tipo_logica: "multiplicador"

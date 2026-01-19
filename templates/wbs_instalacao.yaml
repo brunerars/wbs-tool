@@ -1,0 +1,136 @@
+# Template: WBS Instalação e SAT
+# ==============================
+# Estrutura baseada no processo de instalação em campo e aceite no cliente
+
+nome: "11 - WBS Instalação e SAT"
+wbs_type: "instalacao"
+descricao: "Work Breakdown Structure para fase de instalacao, SAT e entrega final no cliente"
+
+tarefas:
+  # -------------------------------
+  # RECEBIMENTO E PREPARAÇÃO EM CAMPO
+  # -------------------------------
+  - id: 1
+    nome: "Verificar recebimento de equipamentos e kits enviados"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 2
+    nome: "Posicionar bases, bancadas e estruturas nos locais definidos"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 3
+    nome: "Montar subconjuntos transportados parcialmente desmontados"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 4
+    nome: "Conferir integridade, danos e checklist de transporte"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # FIXAÇÃO E ALINHAMENTO
+  # -------------------------------
+  - id: 5
+    nome: "Alinhar bases e estruturas com esquadro e nível no layout final"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 6
+    nome: "Fixar equipamentos no piso, estrutura ou bancadas do cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 7
+    nome: "Reinstalar proteções físicas desmontadas para transporte"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 8
+    nome: "Instalar garras, ferramentas, parafusadeiras, sensores e atuadores"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # CONEXÕES DE UTILIDADES
+  # -------------------------------
+  - id: 9
+    nome: "Conectar alimentação elétrica (fornecida pelo cliente) ao Painel de Controle"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 10
+    nome: "Conectar alimentação pneumática principal ao sistema do cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 11
+    nome: "Verificar aterramento e segurança elétrica"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 12
+    nome: "Reconectar cabos de campo, sensores, atuadores e redes de comunicação"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # TESTES EM CAMPO
+  # -------------------------------
+  - id: 13
+    nome: "Alimentar sistema e realizar testes de integridade dos circuitos"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 14
+    nome: "Validar sensores, atuadores, dispositivos e interfaces com IHM"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 15
+    nome: "Executar testes de segurança (EMG, cortinas, chaves e bi-manuais)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 16
+    nome: "Executar ciclos manuais, semiprontos e automáticos"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # AJUSTES E VALIDAÇÃO DE PROCESSO
+  # -------------------------------
+  - id: 17
+    nome: "Ajustar temporizações, velocidades e movimentos conforme aplicação"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 18
+    nome: "Validar o processo com peças do cliente (ciclo completo)"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # SAT, TREINAMENTO E ACEITE
+  # -------------------------------
+  - id: 19
+    nome: "Realizar SAT (Site Acceptance Test) com o cliente e preencher checklist técnico"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 20
+    nome: "Aplicar treinamento operacional e de manutenção ao cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 21
+    nome: "Obter assinatura do documento de aceite final do cliente"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 22
+    nome: "Entregar documentação técnica final (diagramas, backups, manuais e certificados)"
+    obrigatoria: true
+    dias_default: 1

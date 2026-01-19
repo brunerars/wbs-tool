@@ -1,0 +1,48 @@
+# Template: WBS Projeto Mecânico
+# ========================================
+# Este é um exemplo - ajuste as tarefas conforme sua necessidade
+
+nome: "05 - WBS Manufatura Mecânica"
+wbs_type: "manufatura_mecanica"
+descricao: "Work Breakdown Structure para fase de manufatura mecanica"
+
+tarefas:
+  - id: 1
+    nome: "Verificar mapa de peças e separar matéria-prima bruta para usinagem"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 2
+    nome: "Conferir desenhos, tolerâncias e das peças do subconjunto"
+    obrigatoria: false
+    dias_default: 3
+
+  - id: 3
+    nome: "Executar operações de torno (ex: faceamento, torneamento externo/interno, roscas, canais)"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 4
+    nome: "Executar operações de fresa (ex: rasgos, furos, rebaixos, canais, contornos, alojamentos)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 5
+    nome: "Realizar ajustes manuais e acabamento (ex: lixamento, escareação, rebarba, ajustes finos, rosca e alargador)"
+    obrigatoria: false
+    dias_default: 3
+
+  - id: 6
+    nome: "Realizar verificação dimensional, visual e funcional das peças usinadas"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 7
+    nome: "Atualizar mapa de peças com status de usinagem e liberar para montagem"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 8
+    nome: "Separar peças usinadas finalizadas por subconjunto para entrega à montagem"
+    obrigatoria: false
+    dias_default: 2

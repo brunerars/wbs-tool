@@ -1,0 +1,202 @@
+# Template: WBS Montagem Mecânica
+# ===============================
+# Estrutura baseada no fluxo real de montagem mecânica industrial
+
+nome: "07 - WBS Montagem Mecânica"
+wbs_type: "montagem_mecanica"
+descricao: "Work Breakdown Structure para fase de montagem mecanica"
+
+tarefas:
+  # -------------------------------
+  # PREPARAÇÃO PARA MONTAGEM
+  # -------------------------------
+  - id: 1
+    nome: "Separar desenhos (ex: 3D atualizado, desenhos de montagem 2D)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 2
+    nome: "Separar e organizar peças usinadas para início da montagem (ex: eixos, placas, blocos, flanges, suportes)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 3
+    nome: "Separar e organizar peças de caldeiraria (ex: chapas dobradas, estrutura soldada, suportes soldados)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 4
+    nome: "Separar e organizar componentes mecânicos comerciais (ex: guias, patins, fusos, mancais, buchas, parafusos)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 5
+    nome: "Separar e organizar componentes pneumáticos e elétricos para montagem física (ex: cilindros, válvulas, sensores, torres de sinal, IHMs)"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # ESTRUTURA E BASE
+  # -------------------------------
+  - id: 6
+    nome: "Montar base estrutural (ex: bancadas de perfil, estruturas soldadas)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 7
+    nome: "Montar tampo ou bancada de apoio (ex: bancadas de perfil, tampos, placas base)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 8
+    nome: "Alinhar estrutura com esquadro, prumo e paralelismo"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # FIXAÇÃO DE COMPONENTES MECÂNICOS
+  # -------------------------------
+  - id: 9
+    nome: "Fixar peças usinadas (ex: flanges, blocos, eixos, suportes)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 10
+    nome: "Fixar peças de caldeiraria (ex: reforços dobrados, tampas, suportes soldados)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 11
+    nome: "Fixar peças de policarbonato ou acrílico"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 12
+    nome: "Fixar componentes mecânicos comerciais (ex: guias, patins, fusos, mancais, buchas, rolamentos, parafusos)"
+    obrigatoria: true
+    dias_default: 2
+
+  - id: 13
+    nome: "Montar conjuntos rotativos e de transmissão (ex: eixos, polias, correias, acoplamentos, engrenagens)"
+    obrigatoria: true
+    dias_default: 2
+
+  # -------------------------------
+  # PNEUMÁTICA E SUBCONJUNTOS
+  # -------------------------------
+  - id: 14
+    nome: "Fixar cilindros pneumáticos no subconjunto (ex: ISO, compactos, guiados)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 15
+    nome: "Fixar válvulas e blocos pneumáticos"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 16
+    nome: "Passar e organizar mangueiras pneumáticas (conectar atuadores com blocos)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 17
+    nome: "Fixar subconjunto na estrutura"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 18
+    nome: "Ajustar subconjunto na estrutura"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # MOTORES, SENSORES E AUTOMAÇÃO
+  # -------------------------------
+  - id: 19
+    nome: "Fixar motores, servo motores e moto redutores na estrutura"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 20
+    nome: "Fixar sensores, células de carga, réguas potenciométricas, encoders, sistemas de visão, painéis de controle e painel IHM"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # SISTEMAS AUXILIARES
+  # -------------------------------
+  - id: 21
+    nome: "Montar alimentadores vibratórios, calhas e acessórios de alimentação de peças"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 22
+    nome: "Montar sistemas de transporte e movimentação (ex: esteiras, roletes, mesas de transferência, elevadores)"
+    obrigatoria: false
+    dias_default: 2
+
+  - id: 23
+    nome: "Fixar parafusadeiras elétricas, ferramentas, manipuladores, cabeçotes e equipamentos de teste"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 24
+    nome: "Montar garras, ventosas e dispositivos de fixação mecânica"
+    obrigatoria: false
+    dias_default: 1
+
+  # -------------------------------
+  # ROBÔS E SEGURANÇA
+  # -------------------------------
+  - id: 25
+    nome: "Fixar base do robô na estrutura (ex: robôs industriais, colaborativos, cartesianos)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 26
+    nome: "Instalar ferramentas do robô (ex: garras, ventosas, cabeçotes)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 27
+    nome: "Realizar alinhamento físico do robô com o processo e dispositivos (sem programação)"
+    obrigatoria: false
+    dias_default: 1
+
+  - id: 28
+    nome: "Montar proteções físicas (ex: grades, biombos, portas de acesso)"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 29
+    nome: "Fixar dispositivos de segurança (ex: cortinas de luz, chaves, bi-manuais, scanners)"
+    obrigatoria: true
+    dias_default: 1
+
+  # -------------------------------
+  # TESTES E LIBERAÇÃO
+  # -------------------------------
+  - id: 30
+    nome: "Testar movimentação mecânica do subconjunto"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 31
+    nome: "Verificar torques, folgas, travamentos e ajustes"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 32
+    nome: "Preencher checklist de liberação da montagem mecânica"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 33
+    nome: "Liberar subconjunto para montagem elétrica"
+    obrigatoria: true
+    dias_default: 1
+
+  - id: 34
+    nome: "Atualizar mapa de peça"
+    obrigatoria: false
+    dias_default: 1
