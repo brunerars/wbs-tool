@@ -19,7 +19,8 @@ services:
         condition: on-failure
 
 networks:
-  traefik-public:
+  network_public:
+    name: network_public
     external: true
 
 volumes:
