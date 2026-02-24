@@ -1,8 +1,48 @@
 # Configurações do WBS Hub
 # ========================================
 
-# Endpoint do Make para criar tarefas
-# Substitua pela sua URL real
+# ========================================
+# Wizard Planejamento (novo fluxo)
+# ========================================
+
+# Endpoints Make (webhooks)
+webhook_pendencia: "https://hook.us1.make.com/cadm9mvhbwuqle4f2pmbos4rals74rqg"
+webhook_tasks: "https://hook.us1.make.com/8mi5e7usu77ffp9v2l7enabgp5gbq7uo"
+
+# Timeout das requisições (segundos)
+timeout_pendencia: 30
+timeout_tasks: 60
+
+# Feriados nacionais BR — manter atualizado anualmente
+# Quando a sexta cai em feriado, a task genérica vai para a SEGUNDA-FEIRA seguinte
+feriados_br:
+  - "2025-01-01" # Confraternização Universal
+  - "2025-04-18" # Sexta-feira da Paixão
+  - "2025-04-21" # Tiradentes
+  - "2025-05-01" # Dia do Trabalho
+  - "2025-06-19" # Corpus Christi
+  - "2025-09-07" # Independência do Brasil
+  - "2025-10-12" # Nossa Senhora Aparecida
+  - "2025-11-02" # Finados
+  - "2025-11-15" # Proclamação da República
+  - "2025-11-20" # Consciência Negra
+  - "2025-12-25" # Natal
+  - "2026-01-01" # Confraternização Universal
+  - "2026-04-03" # Sexta-feira da Paixão
+  - "2026-04-21" # Tiradentes
+  - "2026-05-01" # Dia do Trabalho
+  - "2026-09-07" # Independência do Brasil
+  - "2026-10-12" # Nossa Senhora Aparecida
+  - "2026-11-02" # Finados
+  - "2026-11-15" # Proclamação da República
+  - "2026-11-20" # Consciência Negra
+  - "2026-12-25" # Natal
+
+# ========================================
+# LEGADO (fluxo antigo)
+# ========================================
+# `make_endpoint` era usado no app antigo (1 requisição por tarefa).
+# No wizard novo, ele NÃO é utilizado — use `webhook_pendencia` e `webhook_tasks`.
 make_endpoint: "https://hook.us1.make.com/owjl4ws1v6aw2jhw84c2k2hytr9qiwkg"
 
 # Configurações de projeto

@@ -2,7 +2,9 @@ version: "3.8"
 
 services:
   wbs-hub:
-    image: wbs-hub:latest
+    # Permite o Portainer/CI configurar a imagem via env var.
+    # Ex.: IMAGE=ghcr.io/<owner>/wbs-hub:latest
+    image: ${IMAGE:-wbs-hub:latest}
     networks:
       - network_public
     volumes:
