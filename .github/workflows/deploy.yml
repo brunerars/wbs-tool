@@ -53,8 +53,9 @@ jobs:
       - name: Build & Push Image
         uses: docker/build-push-action@v5
         with:
-          context: ./wbs-tool
-          file: ./wbs-tool/Dockerfile
+          # O repo já é o app (não existe ./wbs-tool dentro dele)
+          context: .
+          file: ./Dockerfile
           push: true
           tags: |
             ${{ env.IMAGE }}:${{ steps.meta.outputs.short_sha }}
