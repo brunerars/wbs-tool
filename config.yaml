@@ -9,6 +9,10 @@
 webhook_pendencia: "https://hook.us1.make.com/cadm9mvhbwuqle4f2pmbos4rals74rqg"
 webhook_tasks: "https://hook.us1.make.com/8mi5e7usu77ffp9v2l7enabgp5gbq7uo"
 
+# GET endpoint que retorna lista de pendências do Monday
+# Resposta esperada: [{"id": "...", "nome": "...", "os": "...", "subconjunto": "..."}]
+webhook_get_pendencias: "https://hook.us1.make.com/ugqsmv6t6g6rm29fmk4xpvsp2sqg4y37"
+
 # Timeout das requisições (segundos)
 timeout_pendencia: 30
 timeout_tasks: 60
