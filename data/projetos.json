@@ -65,6 +65,30 @@
       "nome": "Montagem Charlyn",
       "cliente": "Unimil",
       "id": 8799574337
+    },
+    {
+      "codigo": "01210",
+      "nome": "Máquina de Montagem de Abraçadeiras Caillau",
+      "cliente": "HBA",
+      "id": 11586716929
+    },
+    {
+      "codigo": "01211",
+      "nome": "Máquina de Colagem de Abraçadeiras",
+      "cliente": "HBA",
+      "id": 11586742989
+    },
+    {
+      "codigo": "01212",
+      "nome": "Dupla Estação com Evasagem e Lubrificação",
+      "cliente": "HBA",
+      "id": 11586760129
+    },
+    {
+      "codigo": "01213",
+      "nome": "Estação Teste de Estanqueidade (2x)",
+      "cliente": "HBA",
+      "id": 11586600496
     }
   ]
 }
